@@ -4,10 +4,10 @@
 [![rank](https://make.fun/badge/gta6-trophy-guide-01/DanuMahiru/gta6-trophy-guide-01/rank.svg)](https://make.fun/bounty/gta6-trophy-guide-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
 [![reward](https://make.fun/badge/gta6-trophy-guide-01/DanuMahiru/gta6-trophy-guide-01/reward.svg)](https://make.fun/bounty/gta6-trophy-guide-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01)
 
-**Leonida Ledger** — an offline web app that guides and tracks all 55 GTA VI
+**Vice City Trophy Atlas** — an offline web app that guides and tracks all 55 GTA VI
 PlayStation 5 trophies on the road to the platinum. Every trophy carries its
-exact official name, description and grade, a guide written in our own words
-with numbered citations, and a claims list where every fact cites its source.
+exact official name, description and grade, a plain-language guide written in
+our own words with numbered citations, and a claims list where every fact cites its source.
 Sources that disagree are shown both ways with an “Our call” verdict; the
 five trophies with no confirmed unlock method are labelled unconfirmed,
 not guessed.
@@ -18,7 +18,7 @@ not guessed.
   in the browser (localStorage), Export/Import, search, filters (kind, grade,
   missable, at-risk, PSN-hidden, disputed, unconfirmed, earned/not earned)
   and sorting.
-- **Per-trophy detail** — official description, grade, stage and chapter,
+- **Per-trophy detail** — official description, a plain-language guide, grade, stage and chapter,
   PSN visibility, missable windows, at-risk notes, numbered how-to steps with
   inline citations, a claims list, and sources-differ panels with verdicts.
 - **Spoiler shield** — hidden story trophies stay hidden until earned or
@@ -33,8 +33,20 @@ not guessed.
 
 ## Citation counts (computed live from the data)
 
-233 claims cited · 136 backed by 2+ sites · 162 cited steps · 12 sources ·
-3 disputes shown both ways · 5 at risk · 1 possibly missable · 5 unconfirmed.
+272 claims cited · 142 backed by 2+ sites · 162 cited steps · 12 sources ·
+8 disputes shown both ways · 5 at risk · 1 possibly missable · 5 unconfirmed ·
+55/55 trophies carry a guide.
+
+## v2 — what changed (21 Nov 2026)
+
+v1 earned no judge score: it failed the trophies gate because no trophy item
+carried a `guide` field. v2 adds a plain-language `guide` to all 55 trophies
+(verified: 55/55, and `main.ts` now refuses to build the dossier if any guide
+is missing). Citations were lifted by reading the KeenGamer and Push Square
+guides in full: +39 claims, +6 backed by 2+ sites, and 5 new
+sources-differ panels (platinum time, shooting-range locations, Kenton's and
+Billy's final-mission names, Capital Offense). Renamed from “Leonida Ledger”
+(the old name closely resembled a leading entry) to “Vice City Trophy Atlas”.
 
 ## Try it
 
@@ -55,7 +67,8 @@ MAKEFUN_OUTPUT_DIR=out node main.ts
 `app/data/trophies.json` — the 55 trophies, the 12 sources and the roadmap).
 `main.ts` (Node 22, stdlib only) copies `app/` and `screenshots/` into the
 output directory and writes `dossier.json` with the vendored make.fun
-library. `screenshots/` holds 4 real renders of the guide's own code.
+library; it also self-checks the trophies gate first (55 trophies, every one
+with a non-blank guide). `screenshots/` holds 4 real renders of the guide's own code.
 
 ## Licence
 

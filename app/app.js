@@ -1,10 +1,10 @@
-// Leonida Ledger — GTA VI trophy guide & tracker.
+// Vice City Trophy Atlas — GTA VI trophy guide & tracker.
 // All guide text lives in data/trophies.json, written in our own words with a
 // numbered citation on every fact. The audit strip counts are computed from
 // that data at load, so the numbers on screen can never drift from the data.
 (function () {
   'use strict';
-  var KEY = 'leonida-ledger-v1';
+  var KEY = 'vice-city-trophy-atlas-v2';
   var POINTS = { platinum: 300, gold: 90, silver: 30, bronze: 15 };
   var GRADE_ORDER = { platinum: 0, gold: 1, silver: 2, bronze: 3 };
   var KIND_LABELS = { platinum: 'Platinum', story: 'Story', side: 'Side', collectible: 'Collectible', activity: 'Activity', misc: 'Misc' };
@@ -85,7 +85,8 @@
     $('audit-atrisk').textContent = doc.trophies.filter(function (t) { return t.atRisk; }).length;
     $('audit-missable').textContent = doc.trophies.filter(function (t) { return t.missable === 'possible'; }).length;
     $('audit-unconfirmed').textContent = doc.trophies.filter(function (t) { return t.unconfirmed; }).length;
-    $('audit-read').textContent = 'read 20 Nov 2026 · ' + used.size + ' of ' + doc.sources.length + ' sources cited in guides';
+    $('audit-guides').textContent = doc.trophies.filter(function (t) { return typeof t.guide === 'string' && t.guide.trim(); }).length + '/' + doc.trophies.length;
+    $('audit-read').textContent = 'read 21 Nov 2026 · ' + used.size + ' of ' + doc.sources.length + ' sources cited in guides';
   }
 
   // ---------- progress ----------
@@ -188,6 +189,7 @@
     if (t.unconfirmed) {
       h += '<div class="callout"><h3>Unconfirmed</h3><p>No guide source has confirmed how this trophy unlocks yet. The steps below are the best reading of the official description, clearly labelled as a guess — not a fact. This page will be updated when a source confirms it.</p></div>';
     }
+    h += '<div class="detail-sec guide-sec"><h3>Guide — in our own words</h3><p class="guide-text">' + esc(t.guide) + '</p></div>';
     h += '<div class="detail-sec"><h3>How to earn it — ' + t.steps.length + ' steps in our own words</h3><ol class="steps">' +
       t.steps.map(function (s) { return '<li>' + esc(s.t) + ' ' + citeHtml(s.c) + '</li>'; }).join('') + '</ol></div>';
     if (t.dispute) {
@@ -315,7 +317,7 @@
     $('btn-export').addEventListener('click', function () {
       var a = document.createElement('a');
       a.href = URL.createObjectURL(new Blob([JSON.stringify({ earned: Array.from(state.earned), spoiler: state.spoiler, exportedAt: new Date().toISOString() }, null, 2)], { type: 'application/json' }));
-      a.download = 'leonida-ledger-progress.json';
+      a.download = 'vice-city-trophy-atlas-progress.json';
       a.click();
     });
     $('btn-import').addEventListener('click', function () { $('file-import').click(); });
@@ -329,7 +331,7 @@
           state.earned = new Set(ids.filter(function (id) { return byId[id]; }));
           if (typeof raw.spoiler === 'boolean') state.spoiler = raw.spoiler;
           saveState(); renderProgress(); renderChips(); renderList(); renderDetail();
-        } catch (err) { alert('Could not import that file — it is not a Leonida Ledger progress export.'); }
+        } catch (err) { alert('Could not import that file — it is not a Vice City Trophy Atlas progress export.'); }
       });
     });
     // Citation links jump to the Sources tab and highlight the source.

@@ -1,4 +1,4 @@
-/* Leonida Ledger — own look: deep plum header, sunset gradient accent, cream paper body. */
+/* Vice City Trophy Atlas — own look: deep plum header, sunset gradient accent, cream paper body. */
 * { box-sizing: border-box; }
 body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #f6efe3; color: #241a2e; }
 button, input, select { font-family: inherit; }
@@ -82,6 +82,9 @@ main { max-width: 1280px; margin: 0 auto; padding: 16px 18px 30px; }
 .callout p { margin: 4px 0; font-size: 14px; }
 .detail-sec { margin-top: 16px; }
 .detail-sec h3 { color: #1c1026; }
+.guide-sec { background: #fbf6ea; border: 1px solid #e8dcc3; border-radius: 8px; padding: 12px; }
+.guide-sec h3 { color: #1c1026; }
+.guide-text { margin: 0; font-size: 15px; line-height: 1.55; }
 .steps { margin: 0; padding-left: 20px; }
 .steps li { margin: 7px 0; font-size: 14.5px; line-height: 1.45; }
 .claims { margin: 0; padding-left: 20px; }
