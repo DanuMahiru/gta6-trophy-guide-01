@@ -1,0 +1,146 @@
+/* Leonida Ledger — own look: deep plum header, sunset gradient accent, cream paper body. */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #f6efe3; color: #241a2e; }
+button, input, select { font-family: inherit; }
+
+/* ---------- header ---------- */
+.top { background: #1c1026; color: #f6efe3; border-bottom: 5px solid transparent; border-image: linear-gradient(90deg, #ff5e8a, #ff9a3d, #ffd23d) 1; }
+.top-inner { max-width: 1280px; margin: 0 auto; padding: 14px 18px 10px; display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; }
+.brand { display: flex; gap: 12px; align-items: center; }
+.brand-mark { width: 46px; height: 46px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 19px; color: #1c1026; background: linear-gradient(135deg, #ff5e8a, #ffd23d); }
+.brand h1 { margin: 0; font-size: 26px; letter-spacing: 3px; }
+.brand .sub { margin: 2px 0 0; font-size: 13px; color: #d8c9e8; font-style: italic; }
+.progress-box { min-width: 320px; flex: 1; max-width: 560px; }
+.progress-line { font-size: 14px; }
+.bar { height: 9px; background: #3a2547; border-radius: 6px; margin: 7px 0 9px; overflow: hidden; }
+.bar-fill { height: 100%; background: linear-gradient(90deg, #ff5e8a, #ff9a3d, #ffd23d); width: 0; }
+.progress-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.progress-actions button { background: #2e1a3d; color: #f6efe3; border: 1px solid #6b4a80; border-radius: 6px; padding: 5px 11px; font-size: 13px; cursor: pointer; }
+.progress-actions button:hover { border-color: #ffd23d; }
+.saved-note { font-size: 12px; color: #b9a6c9; font-style: italic; }
+
+/* audit strip */
+.audit { max-width: 1280px; margin: 0 auto; padding: 9px 18px; display: flex; gap: 6px 18px; flex-wrap: wrap; font-size: 13px; background: #2e1a3d; border-top: 1px solid #4a2f5e; }
+.audit-item strong { color: #ffd23d; font-size: 15px; }
+.audit-item.warn strong { color: #ff7d9c; }
+
+/* tabs */
+.tabs { max-width: 1280px; margin: 0 auto; padding: 0 18px; display: flex; gap: 4px; }
+.tab { background: none; border: none; border-bottom: 3px solid transparent; color: #d8c9e8; font-size: 15px; padding: 10px 14px 8px; cursor: pointer; }
+.tab.active { color: #ffd23d; border-bottom-color: #ffd23d; font-weight: 700; }
+
+/* ---------- layout ---------- */
+main { max-width: 1280px; margin: 0 auto; padding: 16px 18px 30px; }
+.hidden { display: none; }
+.tracker-grid { display: grid; grid-template-columns: 330px 1fr 260px; gap: 16px; align-items: start; }
+.col-list, .col-detail, .col-rail { min-width: 0; }
+
+/* filters */
+.filters { background: #fffdf7; border: 1px solid #ddd2bd; border-radius: 8px; padding: 10px; margin-bottom: 10px; }
+.filters input[type="search"] { width: 100%; padding: 7px 9px; border: 1px solid #cbbfa5; border-radius: 6px; font-size: 14px; background: #fff; }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+.chip { border: 1px solid #cbbfa5; background: #f6efe3; border-radius: 20px; padding: 3px 10px; font-size: 12.5px; cursor: pointer; }
+.chip.active { background: #1c1026; color: #ffd23d; border-color: #1c1026; }
+.toggles { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+.toggle { border: 1px dashed #b39ec4; background: #fff; border-radius: 6px; padding: 3px 8px; font-size: 12px; cursor: pointer; color: #4a2f5e; }
+.toggle.active { background: #ffedf1; border-style: solid; border-color: #ff5e8a; color: #8f1d3d; font-weight: 700; }
+.sort-row { display: block; margin-top: 9px; font-size: 13px; color: #6b5a7a; }
+.sort-row select { margin-left: 6px; padding: 4px; border: 1px solid #cbbfa5; border-radius: 5px; background: #fff; }
+
+/* trophy list */
+.trophy-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; max-height: 78vh; overflow-y: auto; padding-right: 4px; }
+.trophy-item { background: #fffdf7; border: 1px solid #ddd2bd; border-radius: 8px; padding: 8px 10px; cursor: pointer; display: flex; gap: 9px; align-items: flex-start; }
+.trophy-item:hover { border-color: #ff9a3d; }
+.trophy-item.selected { border-color: #1c1026; box-shadow: 0 0 0 2px #ffd23d inset; }
+.trophy-item.earned { opacity: 0.72; }
+.trophy-item .tick { flex: none; width: 18px; height: 18px; margin-top: 1px; accent-color: #1c1026; cursor: pointer; }
+.trophy-item .t-body { min-width: 0; flex: 1; }
+.trophy-item .t-name { font-weight: 700; font-size: 14.5px; line-height: 1.25; }
+.trophy-item .t-meta { font-size: 12px; color: #6b5a7a; margin-top: 2px; }
+.grade-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: -1px; }
+.grade-platinum { background: #7fd4ff; border: 1px solid #3a8fb5; }
+.grade-gold { background: #ffd23d; border: 1px solid #b98a00; }
+.grade-silver { background: #cfd6dd; border: 1px solid #8a97a3; }
+.grade-bronze { background: #e0a06a; border: 1px solid #9c5a24; }
+.badge { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.4px; padding: 1px 6px; border-radius: 4px; margin-left: 4px; vertical-align: 1px; }
+.badge.hidden { background: #e8e0f0; color: #4a2f5e; }
+.badge.missable { background: #ffe0e6; color: #8f1d3d; }
+.badge.atrisk { background: #fff3d6; color: #8a5a00; }
+.badge.unconfirmed { background: #eee; color: #555; border: 1px dashed #999; }
+.badge.earned { background: #d9f2dd; color: #1d6b2f; }
+.count-line { font-size: 12px; color: #8a5a00; margin-top: 2px; }
+
+/* detail panel */
+.col-detail { background: #fffdf7; border: 1px solid #ddd2bd; border-radius: 8px; padding: 16px 18px; }
+.detail-head h2 { margin: 0; font-size: 22px; }
+.detail-head .official { font-style: italic; color: #4a2f5e; margin: 6px 0 4px; font-size: 15px; }
+.detail-meta { font-size: 13px; color: #6b5a7a; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.detail-meta .badge { margin-left: 0; }
+.callout { border-left: 4px solid #ff5e8a; background: #fff0f3; padding: 10px 12px; margin: 14px 0; border-radius: 0 6px 6px 0; }
+.callout.missable { border-left-color: #c8102e; background: #ffe9ec; }
+.callout h3, .detail-sec h3 { margin: 0 0 6px; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: #8f1d3d; }
+.callout p { margin: 4px 0; font-size: 14px; }
+.detail-sec { margin-top: 16px; }
+.detail-sec h3 { color: #1c1026; }
+.steps { margin: 0; padding-left: 20px; }
+.steps li { margin: 7px 0; font-size: 14.5px; line-height: 1.45; }
+.claims { margin: 0; padding-left: 20px; }
+.claims li { margin: 5px 0; font-size: 14px; line-height: 1.45; }
+.cite { font-size: 11.5px; color: #8f1d3d; font-weight: 700; white-space: nowrap; }
+.cite a { color: #8f1d3d; text-decoration: none; }
+.cite a:hover { text-decoration: underline; }
+.dispute { border: 1px solid #e0a06a; background: #fff8ec; border-radius: 8px; padding: 12px; margin-top: 16px; }
+.dispute h3 { color: #8a5a00; }
+.dispute .versus { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 8px 0; }
+.dispute .ver { background: #fff; border: 1px solid #e8dcc3; border-radius: 6px; padding: 8px 10px; font-size: 13.5px; }
+.dispute .ver b { display: block; margin-bottom: 3px; color: #1c1026; }
+.dispute .call { font-size: 14px; }
+.dispute .call b { color: #1d6b2f; }
+.shielded { text-align: center; padding: 40px 20px; }
+.shielded h2 { margin: 0 0 8px; }
+.shielded p { color: #6b5a7a; }
+.shielded button { margin-top: 12px; background: #1c1026; color: #ffd23d; border: none; border-radius: 6px; padding: 9px 18px; font-size: 14px; cursor: pointer; }
+
+/* right rail */
+.col-rail h3 { margin: 0 0 8px; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: #8f1d3d; }
+.rail-box { background: #fffdf7; border: 1px solid #ddd2bd; border-radius: 8px; padding: 12px; margin-bottom: 12px; }
+.nextup { list-style: none; margin: 0; padding: 0; }
+.nextup li { padding: 7px 0; border-bottom: 1px solid #efe6d2; font-size: 13.5px; cursor: pointer; }
+.nextup li:last-child { border-bottom: none; }
+.nextup li:hover { color: #8f1d3d; }
+.nextup .nu-stage { display: block; font-size: 11.5px; color: #8a5a00; }
+.src-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.src-table td { padding: 4px 0; border-bottom: 1px solid #efe6d2; vertical-align: top; }
+.src-table td:first-child { width: 30px; font-weight: 700; color: #8f1d3d; }
+.rail-note { font-size: 12.5px; color: #6b5a7a; line-height: 1.5; }
+
+/* roadmap / missables / sources */
+.roadmap-intro h2 { margin: 0 0 6px; font-size: 22px; }
+.roadmap-intro p { margin: 0 0 14px; color: #4a2f5e; font-size: 15px; }
+.stages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.stage-card { background: #fffdf7; border: 1px solid #ddd2bd; border-radius: 8px; padding: 14px; }
+.stage-card h3 { margin: 0 0 4px; font-size: 17px; }
+.stage-card .hours { font-size: 13px; color: #8a5a00; font-weight: 700; margin-bottom: 8px; }
+.stage-card p { font-size: 14px; line-height: 1.5; margin: 0 0 10px; }
+.stage-card ul { margin: 0; padding-left: 18px; font-size: 13.5px; }
+.stage-card li { margin: 4px 0; cursor: pointer; }
+.stage-card li:hover { color: #8f1d3d; }
+.missables { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.miss-card { background: #fffdf7; border: 1px solid #ddd2bd; border-radius: 8px; padding: 14px; cursor: pointer; }
+.miss-card:hover { border-color: #ff5e8a; }
+.miss-card h3 { margin: 0 0 4px; font-size: 17px; }
+.miss-card p { font-size: 14px; line-height: 1.5; margin: 6px 0; }
+.sources-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.sources-list li { background: #fffdf7; border: 1px solid #ddd2bd; border-radius: 8px; padding: 10px 12px; font-size: 14px; }
+.sources-list .src-name { font-weight: 700; }
+.sources-list .src-count { color: #8a5a00; font-size: 13px; }
+.sources-list a { color: #8f1d3d; word-break: break-all; }
+
+footer { max-width: 1280px; margin: 0 auto; padding: 0 18px 24px; font-size: 12.5px; color: #6b5a7a; line-height: 1.6; }
+
+@media (max-width: 980px) {
+  .tracker-grid { grid-template-columns: 1fr; }
+  .trophy-list { max-height: 420px; }
+  .stages, .missables { grid-template-columns: 1fr; }
+  .dispute .versus { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Ledger — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <div class="brand">
+      <div class="brand-mark">LL</div>
+      <div>
+        <h1>LEONIDA LEDGER</h1>
+        <p class="sub">GTA VI Trophy Guide &amp; Tracker &middot; PlayStation 5 &middot; all 55 trophies</p>
+      </div>
+    </div>
+    <div class="progress-box">
+      <div class="progress-line"><strong id="earned-count">0/55</strong> earned &middot; <span id="points-line">0 / 1,350 PSN points</span> &middot; <span id="score-line">0 / 1,000 Gamerscore</span></div>
+      <div class="bar"><div class="bar-fill" id="bar-fill" style="width:0%"></div></div>
+      <div class="progress-actions">
+        <button id="btn-export" type="button">Export</button>
+        <button id="btn-import" type="button">Import</button>
+        <input id="file-import" type="file" accept="application/json" hidden>
+        <button id="btn-spoiler" type="button" aria-pressed="true">Spoiler shield: ON</button>
+        <span class="saved-note">Saved in this browser</span>
+      </div>
+    </div>
+  </div>
+  <div class="audit" id="audit-strip">
+    <span class="audit-item"><strong id="audit-cited">—</strong> claims cited</span>
+    <span class="audit-item"><strong id="audit-backed">—</strong> backed by 2+ sites</span>
+    <span class="audit-item"><strong id="audit-steps">—</strong> cited steps</span>
+    <span class="audit-item"><strong id="audit-sources">—</strong> sources</span>
+    <span class="audit-item"><strong id="audit-disputes">—</strong> disputes, both ways</span>
+    <span class="audit-item"><strong id="audit-atrisk">—</strong> at risk</span>
+    <span class="audit-item warn"><strong id="audit-missable">—</strong> possibly missable</span>
+    <span class="audit-item warn"><strong id="audit-unconfirmed">—</strong> unconfirmed</span>
+    <span class="audit-item"><strong id="audit-read">read 20 Nov 2026</strong></span>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button class="tab active" data-tab="tracker" type="button">Tracker</button>
+    <button class="tab" data-tab="roadmap" type="button">Roadmap</button>
+    <button class="tab" data-tab="missables" type="button">Missables &amp; At Risk</button>
+    <button class="tab" data-tab="sources" type="button">Sources</button>
+  </nav>
+</header>
+
+<main>
+  <section id="view-tracker" class="view">
+    <div class="tracker-grid">
+      <aside class="col-list">
+        <div class="filters">
+          <input id="search" type="search" placeholder="Search trophies…" aria-label="Search trophies">
+          <div class="chips" id="kind-chips"></div>
+          <div class="chips" id="grade-chips"></div>
+          <div class="toggles" id="flag-toggles"></div>
+          <label class="sort-row">Sort
+            <select id="sort">
+              <option value="roadmap">Roadmap order</option>
+              <option value="chapter">By chapter</option>
+              <option value="grade">By grade</option>
+              <option value="name">By name</option>
+            </select>
+          </label>
+        </div>
+        <ol class="trophy-list" id="trophy-list"></ol>
+      </aside>
+      <article class="col-detail" id="detail"></article>
+      <aside class="col-rail" id="rail"></aside>
+    </div>
+  </section>
+
+  <section id="view-roadmap" class="view hidden">
+    <div class="roadmap-intro">
+      <h2>Platinum roadmap</h2>
+      <p>One playthrough, no online trophies, no mission replay, about 200 hours. Cheats disable trophies and saving — do not use them.</p>
+    </div>
+    <div id="roadmap-stages" class="stages"></div>
+  </section>
+
+  <section id="view-missables" class="view hidden">
+    <div class="roadmap-intro">
+      <h2>Missables &amp; at risk</h2>
+      <p>Only one trophy is possibly missable. Five more are at risk because their quest chains are optional and go quiet for chapters. Five trophies still have no confirmed unlock method — those are listed honestly as unconfirmed, not guessed.</p>
+    </div>
+    <div id="missables-list" class="missables"></div>
+  </section>
+
+  <section id="view-sources" class="view hidden">
+    <div class="roadmap-intro">
+      <h2>Sources</h2>
+      <p>Every fact in this guide is cited. The claim counts below are computed from the guide data itself — nothing is hand-typed. Sources marked “list reference” were consulted for the official trophy list; the rest are cited inside the guides.</p>
+    </div>
+    <ol id="sources-list" class="sources-list"></ol>
+  </section>
+</main>
+
+<footer>
+  <p>Leonida Ledger — an unofficial fan guide. Grand Theft Auto and GTA are trademarks of Rockstar Games / Take-Two Interactive. No Rockstar logo or official artwork is used. All guide text is written in our own words; every fact cites its source. Data: the official 55-trophy list as published (Exophase and PSNProfiles agree). Read 20 November 2026.</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
